@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Formulário de Carro</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="form-container">
+        <h1>Formulário de Carro</h1>
+
+        <form th:action="@{/carros}" th:object="${carro}" method="post">
+            <label>Marca: <input type="text" th:field="*{marca}" /></label>
+            <label>Modelo: <input type="text" th:field="*{modelo}" /></label>
+            <label>Ano: <input type="number" th:field="*{ano}" /></label>
+            <label>Cor: <input type="text" th:field="*{cor}" /></label>
+
+            <button type="submit">Salvar</button>
+        </form>
+        <a th:href="@{/carros}" class="back-link">Voltar à Lista de Carros</a>
+    </div>
+</div>
+
+</body>
+</html>
